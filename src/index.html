@@ -14,11 +14,23 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <!-- Add these meta tags for SEO -->
+    <meta name="description" content="Luccas Booth - Professional artist and art handler showcasing a unique portfolio of mixed media, oil paintings, and contemporary artwork. Based in New Hampshire.">
+    <meta name="keywords" content="Luccas Booth, artist portfolio, art handler, contemporary art, oil paintings, mixed media, New Hampshire artist">
+    <meta name="author" content="Luccas Booth">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Luccas Booth - Artist Portfolio">
+    <meta property="og:description" content="Explore the artistic works of Luccas Booth - Contemporary artist and art handler">
+    <meta property="og:image" content="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_8869.jpg">
+    <meta property="og:url" content="https://luccasbooth.com">
 </head>
 <body>
     <header-component></header-component>
     <main>
-        <section class="hero">
+        <!-- Update hero section with more semantic content -->
+        <section class="hero" aria-label="Introduction">
             <h1 data-aos="fade-down">Luccas Booth</h1>
             <h2 data-aos="fade-up">Artist, Designer, Art Handler</h2>
             <p data-aos="fade-up" data-aos-delay="200">
@@ -27,7 +39,7 @@
         </section>
         
         <!-- Replace the entire gallery section -->
-        <section id="gallery" data-aos="fade-up">
+        <section id="gallery" data-aos="fade-up" aria-label="Featured Works">
             <div class="gallery-header">
                 <h2>Featured Works</h2>
                 <p>A collection of my recent artistic explorations</p>
@@ -38,7 +50,7 @@
                     <div class="gallery-item featured" data-aos="zoom-in">
                         <a href="artwork1.html">
                             <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_8869.jpg" 
-                                 alt="Blue Figure in Darkness" 
+                                 alt="Blue Figure in Darkness - Mixed media artwork featuring ethereal blue tones" 
                                  class="gallery-image" 
                                  loading="lazy">
                             <div class="gallery-overlay">
