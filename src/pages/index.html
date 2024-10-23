@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <title>Artist Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <header-component></header-component>
+    <main>
+        <section class="hero">
+            <h1 data-aos="fade-down">Luccas Booth</h1>
+            <h2 data-aos="fade-up">Artist, Designer, Art Handler</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Luccas Booth works in the art world, blending his passion for creating unique artwork with his expertise as an art handler.
+            </p>
+        </section>
+        
+        <!-- Image Gallery Section with Swiper Carousel -->
+        <section id="gallery" data-aos="fade-up">
+            <div class="swiper-container gallery-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <a href="artwork1.html">
+                            <img src="https://picsum.photos/seed/artwork1/400/300" alt="Artwork 1 Title" class="gallery-image" data-aos="zoom-in">
+                            <p>Artwork 1 Title</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                        <a href="artwork2.html">
+                            <img src="https://picsum.photos/seed/artwork2/400/300" alt="Artwork 2 Title" class="gallery-image" data-aos="zoom-in">
+                            <p>Artwork 2 Title</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                        <a href="artwork3.html">
+                            <img src="https://picsum.photos/seed/artwork3/400/300" alt="Artwork 3 Title" class="gallery-image" data-aos="zoom-in">
+                            <p>Artwork 3 Title</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                        <a href="artwork4.html">
+                            <img src="https://picsum.photos/seed/artwork4/400/300" alt="Artwork 4 Title" class="gallery-image" data-aos="zoom-in">
+                            <p>Artwork 4 Title</p>
+                        </a>
+                    </div>
+                    <!-- Add more Swiper Slides as needed -->
+                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                        <a href="artwork5.html">
+                            <img src="https://picsum.photos/seed/artwork5/400/300" alt="Artwork 5 Title" class="gallery-image" data-aos="zoom-in">
+                            <p>Artwork 5 Title</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                        <a href="artwork6.html">
+                            <img src="https://picsum.photos/seed/artwork6/400/300" alt="Artwork 6 Title" class="gallery-image" data-aos="zoom-in">
+                            <p>Artwork 6 Title</p>
+                        </a>
+                    </div>
+                    <!-- Continue adding slides as desired -->
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev" aria-label="Previous Slide"></div>
+                <div class="swiper-button-next" aria-label="Next Slide"></div>
+            </div>
+        </section>
+
+        <!-- New Welcome Section -->
+        <section id="welcome" data-aos="fade-up">
+            <div class="welcome-container">
+                <h2 data-aos="fade-up">Welcome to My Portfolio</h2>
+                <p data-aos="fade-up" data-aos-delay="100">
+                    Hi, I'm Luccas Booth. I graduated with a Bachelor of Fine Arts from the University of New Hampshire and currently work as an art handler. My mission is to continually develop myself as an artist, to grow, and to design art in my own way. I believe in the authenticity of art and do not support its commercialization.
+                </p>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    I have personally grown as an artist by traveling to many places and experiencing different cultures. Here is a short list of places I've been:
+                </p>
+                <ul class="services-list" data-aos="fade-up" data-aos-delay="300">
+                    <li>New York City, USA</li>
+                    <li>Paris, France</li>
+                    <li>Tokyo, Japan</li>
+                    <li>Barcelona, Spain</li>
+                    <li>Montreal, Canada</li>
+                </ul>
+                <p data-aos="fade-up" data-aos-delay="400">
+                    Each destination has inspired my work in unique ways!
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer-component></footer-component>
+    
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

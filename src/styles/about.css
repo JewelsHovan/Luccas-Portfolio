@@ -1,0 +1,328 @@
+/* Import base styles and variables from home.css */
+@import url('home.css');
+
+/* About Page Specific Styles */
+
+/* Hero Section Modifications */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Updated to match index.css */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/images/luccas-booth-about-bg.jpg') center 30% / cover;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: gradientChange 5s infinite;
+    background: linear-gradient(45deg, #ffffff, #D4AF37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes gradientChange {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Main About Section */
+#about {
+    padding: 80px 20px;
+    background-color: var(--background-color);
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
+.about-container {
+    max-width: 1400px; /* Increased for better content flow */
+    margin: 0 auto;
+    display: flex;
+    gap: 80px; /* Increased spacing */
+    align-items: flex-start;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Image Styles */
+.about-image {
+    flex: 1.2; /* Slightly larger image section */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-image .portrait {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.about-image .artwork {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    opacity: 0.9;
+}
+
+/* Content Area Styles */
+.about-content {
+    flex: 2.5; /* More space for the longer bio */
+    padding: 20px;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.about-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.about-content h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin: 40px 0 20px;
+}
+
+.about-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    line-height: 2;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Expertise List Styles */
+.expertise-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.expertise-list li {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, rgba(44, 62, 80, 0.9) 100%);
+    color: var(--secondary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.expertise-list li:hover {
+    transform: translateX(10px);
+}
+
+.expertise-list li::before {
+    content: '→';
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Achievements Section */
+.achievements {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.05) 0%, rgba(231, 76, 60, 0.05) 100%);
+    border-radius: 15px;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.achievement-item {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 12px;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-item .number {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.achievement-item .label {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.9;
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-container {
+        padding: 30px;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: left; /* Changed from center to improve readability */
+        padding: 20px; /* Reduced padding for more content space */
+    }
+
+    .about-image {
+        margin: 0 auto 40px;
+        max-width: 300px;
+    }
+
+    .about-image::after {
+        display: none;
+    }
+
+    .about-content h2::after {
+        left: 0; /* Align decoration line to the left */
+        transform: none;
+    }
+
+    .expertise-list {
+        grid-template-columns: 1fr;
+    }
+
+    .expertise-list li {
+        justify-content: center;
+    }
+
+    .achievement-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .about-content p {
+        text-align: left; /* Changed from justify to improve readability */
+        font-size: 1.1em; /* Slightly smaller font size */
+        line-height: 1.8; /* Adjusted line height for better spacing */
+        margin-bottom: 20px; /* Reduced margin */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2em; /* Slightly reduced */
+    }
+
+    .hero h2 {
+        font-size: 1.3em; /* Slightly reduced */
+    }
+
+    .about-content {
+        padding: 10px; /* Reduced padding */
+    }
+
+    .about-content h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .about-content h3 {
+        font-size: 1.3em;
+        margin: 25px 0 15px;
+    }
+
+    .about-content p {
+        font-size: 1em; /* Smaller base font size */
+        line-height: 1.6; /* Tighter line height */
+        margin-bottom: 15px;
+    }
+
+    .expertise-list li {
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .about-image::after,
+    .achievement-item:hover,
+    .expertise-list li:hover {
+        transform: none;
+    }
+
+    .about-container {
+        box-shadow: none;
+    }
+}

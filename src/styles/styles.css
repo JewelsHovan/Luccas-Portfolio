@@ -1,0 +1,415 @@
+/* CSS Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --accent-color: #e74c3c;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --hover-color: #3498db;
+    --transition-speed: 0.3s;
+}
+
+/* Global Reset and Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    background-image: url('images/background-pattern.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+}
+
+p, label, a, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-links a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--background-color);
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Global Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 1s ease-out;
+}
+
+footer a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    transition: transform var(--transition-speed), filter var(--transition-speed);
+}
+
+footer a img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Global Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* Add or update these styles */
+.swiper-container {
+    width: 100vw; /* Full viewport width */
+    max-width: 100%; /* Prevent horizontal overflow */
+    overflow: hidden; /* Crucial - prevents horizontal scroll */
+    position: relative;
+}
+
+.swiper-slide {
+    width: 30vw !important; /* Dynamic width based on viewport */
+    min-width: 280px !important; /* Minimum width for small screens */
+    max-width: 400px !important; /* Maximum width for large screens */
+    height: 40vh !important; /* Dynamic height */
+    margin-right: 2vw !important; /* Dynamic spacing */
+    box-sizing: border-box;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+.gallery-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container modifications */
+.container {
+    width: 90vw; /* Use viewport width */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw; /* Dynamic padding */
+    overflow: hidden; /* Prevent horizontal scroll */
+}
+
+/* Custom Footer Styles */
+#footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 40px 0; /* Remove horizontal padding */
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    width: 100%; /* Explicit width setting */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Move horizontal padding to container */
+    box-sizing: border-box;
+}
+
+/* Update the footer content styles */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    box-sizing: border-box; /* Add this */
+    width: 100%; /* Add this */
+}
+
+/* Add this utility class */
+* {
+    box-sizing: border-box; /* Global box-sizing reset */
+}
+
+.footer-about,
+.footer-links,
+.footer-contact,
+.footer-social {
+    flex: 1 1 200px;
+    margin-bottom: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-about p,
+.footer-contact p {
+    line-height: 1.6;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-contact a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.footer-contact a:hover {
+    color: var(--accent-color);
+}
+
+.footer-social .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.footer-social .social-icons a:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.footer-social .social-icons svg {
+    fill: var(--secondary-color);
+    transition: fill var(--transition-speed);
+}
+
+.footer-social .social-icons a:hover svg {
+    fill: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid var(--secondary-color);
+    padding-top: 20px;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+/* Footer Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-about,
+    .footer-links,
+    .footer-contact,
+    .footer-social {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    
+    .footer-social .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Update header styles */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Update mobile styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: row; /* Keep horizontal layout on mobile */
+        width: 100%;
+    }
+}
