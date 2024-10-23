@@ -307,6 +307,10 @@
         padding: 12px 15px;
         font-size: 0.95em;
     }
+
+    .hero::after {
+        background-position: 70% center; /* Adjust percentage to show the person */
+    }
 }
 
 /* Print Styles */
