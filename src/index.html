@@ -26,55 +26,85 @@
             </p>
         </section>
         
-        <!-- Image Gallery Section with Swiper Carousel -->
+        <!-- Replace the entire gallery section -->
         <section id="gallery" data-aos="fade-up">
-            <div class="swiper-container gallery-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="100">
+            <div class="gallery-header">
+                <h2>Featured Works</h2>
+                <p>A collection of my recent artistic explorations</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-item featured" data-aos="zoom-in">
                         <a href="artwork1.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_8869.jpg" alt="Artwork 1 Title" class="gallery-image" data-aos="zoom-in">
-                            <p>Artwork 1 Title</p>
+                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_8869.jpg" 
+                                 alt="Blue Figure in Darkness" 
+                                 class="gallery-image" 
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Blue Figure in Darkness</h3>
+                                <p>Mixed media on canvas, 2023</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
                         </a>
                     </div>
-                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    
+                    <div class="gallery-item" data-aos="zoom-in">
                         <a href="artwork2.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/Abstract%20landscape.jpg" alt="Artwork 2 Title" class="gallery-image" data-aos="zoom-in">
-                            <p>Artwork 2 Title</p>
+                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/Abstract%20landscape.jpg" 
+                                 alt="Abstract Landscape" 
+                                 class="gallery-image" 
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Abstract Landscape</h3>
+                                <p>Oil on canvas, 2023</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
                         </a>
                     </div>
-                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    
+                    <div class="gallery-item" data-aos="zoom-in">
                         <a href="artwork3.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG-8862.jpg" alt="Artwork 3 Title" class="gallery-image" data-aos="zoom-in">
-                            <p>Artwork 3 Title</p>
+                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG-8862.jpg" 
+                                 alt="Geometric Abstraction" 
+                                 class="gallery-image" 
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Geometric Abstraction</h3>
+                                <p>Acrylic on canvas, 2023</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
                         </a>
                     </div>
-                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    
+                    <div class="gallery-item" data-aos="zoom-in">
                         <a href="artwork4.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG-9294%20(1).jpg" alt="Artwork 4 Title" class="gallery-image" data-aos="zoom-in">
-                            <p>Artwork 4 Title</p>
+                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG-9294%20(1).jpg" 
+                                 alt="Urban Composition" 
+                                 class="gallery-image" 
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Urban Composition</h3>
+                                <p>Mixed media, 2023</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
                         </a>
                     </div>
-                    <!-- Add more Swiper Slides as needed -->
-                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                    
+                    <div class="gallery-item" data-aos="zoom-in">
                         <a href="artwork5.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/owl%20on%20a%20boat.jpg" alt="Artwork 5 Title" class="gallery-image" data-aos="zoom-in">
-                            <p>Artwork 5 Title</p>
+                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/owl%20on%20a%20boat.jpg" 
+                                 alt="Owl on a Boat" 
+                                 class="gallery-image" 
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Owl on a Boat</h3>
+                                <p>Oil on canvas, 2023</p>
+                                <span class="view-more">View Details →</span>
+                            </div>
                         </a>
                     </div>
-                    <div class="swiper-slide gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                        <a href="artwork6.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/abstract%20shapes.jpg" alt="Artwork 6 Title" class="gallery-image" data-aos="zoom-in">
-                            <p>Artwork 6 Title</p>
-                        </a>
-                    </div>
-                    <!-- Continue adding slides as desired -->
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                
-                <!-- Add Navigation -->
-                <div class="swiper-button-prev" aria-label="Previous Slide"></div>
-                <div class="swiper-button-next" aria-label="Next Slide"></div>
             </div>
         </section>
 

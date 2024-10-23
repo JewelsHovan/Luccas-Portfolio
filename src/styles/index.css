@@ -1,4 +1,6 @@
+/* =================== */
 /* Hero Section Styles */
+/* =================== */
 .hero {
     display: flex;
     flex-direction: column;
@@ -9,7 +11,7 @@
     color: var(--secondary-color);
     text-align: center;
     padding: 20px;
-    position: relative; /* Added to position the pseudo-element correctly */
+    position: relative;
 }
 
 .hero::after {
@@ -19,8 +21,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../assets/images/hero-bg.jpg') center 30% / contain; /* Added 30% to shift image down */
-    background-size: cover; /* Ensures the image covers the entire area */
+    background: url('../assets/images/hero-bg.jpg') center 30% / contain;
+    background-size: cover;
     opacity: 0.2;
     z-index: 1;
 }
@@ -29,302 +31,155 @@
     font-size: 60px;
     margin-bottom: 20px;
     animation: gradientChange 5s infinite;
-    background: linear-gradient(45deg, #ffffff, #D4AF37); /* Updated gradient colors */
+    background: linear-gradient(45deg, #ffffff, #D4AF37);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-@keyframes gradientChange {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    z-index: 2;
 }
 
 .hero h2 {
     font-size: 48px;
     margin-bottom: 20px;
+    z-index: 2;
 }
 
 .hero p {
     font-size: 18px;
     max-width: 600px;
+    z-index: 2;
 }
 
-/* Swiper Carousel Specific Styles */
-.swiper-container.gallery-swiper {
-    width: 100%; /* Changed from 90vw */
-    max-width: 1200px;
+@keyframes gradientChange {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ==================== */
+/* Gallery Section Styles */
+/* ==================== */
+#gallery {
+    padding: 60px 20px;
+    background: linear-gradient(to top, #ffffff, #ca6c65, #ffffff);
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery-header h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.gallery-header p {
+    color: var(--text-color);
+    font-size: 1.1em;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 2vh 0;
-    position: relative;
-    overflow: hidden; /* Changed from visible */
 }
 
-.swiper-slide {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    height: auto !important;
-    opacity: 0.4;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.swiper-slide-active {
-    opacity: 1;
-    transform: scale(1.05);
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
 }
 
 .gallery-item {
     position: relative;
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
+    background: #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    background: #f5f5f5;
-    width: 90%;          /* Adjust this value */
-    max-width: 400px;    /* Adjust this value */
-    margin: 0 auto;      /* This helps with centering */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    aspect-ratio: 4/3;
+}
+
+.gallery-item.featured {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .gallery-image {
-    aspect-ratio: 4/3;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.gallery-item p {
+.gallery-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 15px;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        transparent 100%
+    );
     color: white;
-    margin: 0;
+    padding: 30px 20px;
     transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-overlay h3 {
+    font-size: 1.4em;
+    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+.gallery-overlay p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.view-more {
+    display: inline-block;
+    font-size: 0.9em;
+    color: var(--accent-color, #D4AF37);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: transform 0.3s ease;
 }
 
-/* Enhanced Navigation */
-.swiper-button-prev,
-.swiper-button-next {
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    font-size: 18px;
-    color: var(--primary-color);
-}
-
-.swiper-pagination {
-    position: relative;
-    margin-top: 20px;
-}
-
-.swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: var(--accent-color);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-    width: 20px;
-    border-radius: 5px;
-    background: var(--primary-color);
-}
-
-/* Enhanced Navigation Buttons */
-.swiper-button-prev,
-.swiper-button-next {
-    background-color: rgba(255, 255, 255, 0.95);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    background-color: var(--primary-color);
-    transform: scale(1.1);
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    font-size: 20px;
-    color: var(--primary-color);
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.swiper-button-prev:hover:after,
-.swiper-button-next:hover:after {
-    color: white;
-}
-
-/* Enhanced Hover Effects */
+/* Gallery Hover Effects */
 .gallery-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-item:hover .gallery-image {
     transform: scale(1.1);
 }
 
-.gallery-item:hover p {
+.gallery-item:hover .gallery-overlay {
     transform: translateY(0);
 }
 
-/* Loading State */
-.gallery-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        transparent 0%,
-        rgba(255,255,255,0.3) 50%,
-        transparent 100%
-    );
-    animation: loading 1s infinite;
-    display: none;
+.gallery-item:hover .view-more {
+    transform: translateX(10px);
 }
 
-.gallery-item.loading::before {
-    display: block;
-}
-
-@keyframes loading {
-    from {
-        left: -100%;
-    }
-    to {
-        left: 200%;
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .swiper-button-prev,
-    .swiper-button-next {
-        display: none;
-    }
-    
-    .gallery-item p {
-        transform: translateY(0);
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* Hero Section Adjustments */
-    .hero {
-        height: 70vh;  /* Slightly reduced height */
-        padding: 40px 20px;  /* Increased padding */
-    }
-
-    .hero h1 {
-        font-size: 42px;  /* Reduced font size */
-        margin-bottom: 30px;  /* Increased margin */
-    }
-
-    .hero h2 {
-        font-size: 32px;
-        margin-bottom: 30px;
-    }
-
-    .hero p {
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
-
-    /* Gallery Section Adjustments */
-    #gallery {
-        padding: 60px 0;  /* Added vertical padding */
-        margin: 40px 0;   /* Added vertical margin */
-    }
-
-    .swiper-container.gallery-swiper {
-        padding: 4vh 0;  /* Increased padding */
-    }
-
-    .gallery-item {
-        margin-bottom: 20px;  /* Added bottom margin */
-        width: 85%; /* Adjusted for mobile */
-        max-width: 350px; /* Adjusted for mobile */
-    }
-
-    /* Welcome Section Adjustments */
-    #welcome {
-        height: auto;  /* Changed from 100vh to auto */
-        min-height: 100vh;  /* Minimum height */
-        padding: 80px 20px;  /* Increased padding */
-    }
-
-    #welcome .welcome-container {
-        padding: 40px 25px;  /* Increased padding */
-        margin: 20px 15px;   /* Added margin */
-    }
-
-    .services-list {
-        margin: 40px auto;  /* Increased margin */
-        gap: 20px;         /* Increased gap between list items */
-    }
-
-    .services-list li {
-        padding: 12px 20px;  /* Increased padding */
-        margin-bottom: 5px;  /* Added margin between items */
-    }
-}
-
-/* Additional Adjustments for Smaller Screens */
-@media (max-width: 480px) {
-    .hero {
-        height: 60vh;
-    }
-
-    #welcome {
-        padding: 60px 15px;
-    }
-
-    #welcome .welcome-container {
-        padding: 30px 20px;
-    }
-
-    .services-list {
-        gap: 15px;
-    }
-
-    .gallery-item {
-        width: 80%; /* Further adjusted for smaller screens */
-        max-width: 300px; /* Further adjusted for smaller screens */
-    }
-}
-
+/* ==================== */
 /* Welcome Section Styles */
+/* ==================== */
 #welcome {
     padding: 60px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/blue_room.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/blue_room.jpg') 
+                no-repeat center center;
     background-size: cover;
     color: #fff;
     text-align: center;
@@ -335,12 +190,11 @@
     justify-content: center;
 }
 
-#welcome .welcome-container {
+.welcome-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px; /* Increased padding */
-    background: rgba(255, 255, 255, 0.95); /* More opaque background */
-    border: none; /* Removed border */
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -377,7 +231,7 @@
 
 .services-list {
     list-style: none;
-    text-align: center; /* Added missing semicolon */
+    text-align: center;
     max-width: 600px;
     margin: 30px auto;
     padding: 0;
@@ -400,14 +254,82 @@
     transform: translateX(10px);
 }
 
-/* Remove the bullet points and add a nice icon */
 .services-list li::before {
-    content: '✈️'; /* Travel-themed emoji */
+    content: '✈️';
     margin-right: 10px;
 }
 
-/* Responsive adjustments */
+/* ==================== */
+/* Responsive Styles */
+/* ==================== */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .gallery-item.featured {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Hero Adjustments */
+    .hero {
+        height: 70vh;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hero::after {
+        background-position: 50% -25px !important;
+    }
+
+    /* Gallery Adjustments */
+    #gallery {
+        padding: 40px 15px;
+    }
+
+    .gallery-header h2 {
+        font-size: 2em;
+    }
+
+    .gallery-overlay {
+        transform: translateY(0);
+        padding: 20px 15px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 1.2em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    /* Welcome Section Adjustments */
+    #welcome {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 20px;
+    }
+
     #welcome .welcome-container {
         padding: 30px 20px;
         margin: 0 15px;
@@ -423,6 +345,11 @@
         padding: 0 10px;
     }
 
+    .services-list {
+        margin: 40px auto;
+        gap: 20px;
+    }
+
     .services-list li {
         font-size: 1em;
         padding: 8px 15px;
@@ -430,6 +357,24 @@
 }
 
 @media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .gallery-header h2 {
+        font-size: 1.8em;
+    }
+
+    .gallery-overlay {
+        padding: 15px;
+    }
+
     #welcome h2 {
         font-size: 1.8em;
     }
@@ -442,77 +387,5 @@
     .services-list li {
         font-size: 0.95em;
         padding: 6px 12px;
-    }
-}
-
-/* Enhanced Image Hover Effects */
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery-image {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
-}
-
-.gallery-item:hover .gallery-image {
-    transform: scale(1.08) rotate(1deg);
-    filter: brightness(1.1) contrast(1.1);
-}
-
-.gallery-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover::after {
-    opacity: 1;
-}
-
-.gallery-item p {
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2;
-}
-
-.gallery-item:hover p {
-    transform: translateY(0);
-}
-
-/* Mobile S - 320px */
-@media (min-width: 320px) {
-    .gallery-item {
-        width: 85%;          /* Adjust for smallest screens */
-        max-width: 280px;    /* Adjust based on testing */
-    }
-}
-
-/* Mobile M - 375px */
-@media (min-width: 375px) {
-    .gallery-item {
-        width: 85%;          /* Adjust for medium mobile */
-        max-width: 320px;    /* Adjust based on testing */
-    }
-}
-
-/* Mobile L - 425px */
-@media (min-width: 425px) {
-    .gallery-item {
-        width: 95%;          /* Adjust for larger mobile */
-        max-width: 400px;    /* Adjust based on testing */
-    }
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .hero::after {
-        background-position: 50% -25px !important; /* Try an even more negative value */
     }
 }

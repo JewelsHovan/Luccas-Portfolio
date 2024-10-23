@@ -24,62 +24,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize Swiper Carousel
-    if (typeof Swiper !== 'undefined') {
-        const swiper = new Swiper('.gallery-swiper', {
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            spaceBetween: 15,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                // Mobile S (320px)
-                320: {
-                    slidesPerView: 1,
-                    centeredSlides: true
-                },
-                // Mobile M (375px)
-                375: {
-                    slidesPerView: 1,
-                    centeredSlides: true
-                },
-                // Mobile L (425px)
-                425: {
-                    slidesPerView: 1,
-                    centeredSlides: false
-                },
-                // Tablet and above
-                768: {
-                    slidesPerView: 'auto',
-                    centeredSlides: true
-                }
-            }
+    // Handle image loading for gallery items
+    function handleImageLoading() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            const img = item.querySelector('img');
+            item.classList.add('loading');
+            
+            img.onload = () => {
+                item.classList.remove('loading');
+            };
+            
+            img.onerror = () => {
+                item.classList.remove('loading');
+                img.src = 'path/to/fallback-image.jpg'; // Add a fallback image
+            };
         });
-
-        function handleImageLoading() {
-            const slides = document.querySelectorAll('.gallery-item');
-            slides.forEach(slide => {
-                const img = slide.querySelector('img');
-                slide.classList.add('loading');
-                
-                img.onload = () => {
-                    slide.classList.remove('loading');
-                };
-                
-                img.onerror = () => {
-                    slide.classList.remove('loading');
-                    img.src = 'path/to/fallback-image.jpg'; // Add a fallback image
-                };
-            });
-        }
     }
+
+    // Initialize image loading handling
+    handleImageLoading();
 
     // Contact Form Handling - Only run if form exists
     const form = document.querySelector('.contact-form');
