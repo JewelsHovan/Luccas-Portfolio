@@ -67,8 +67,11 @@
 }
 
 .swiper-slide {
-    width: auto !important; /* Remove fixed width */
-    height: auto !important; /* Remove fixed height */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
     opacity: 0.4;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -84,7 +87,10 @@
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    background: #f5f5f5; /* Loading state background */
+    background: #f5f5f5;
+    width: 90%;          /* Adjust this value */
+    max-width: 400px;    /* Adjust this value */
+    margin: 0 auto;      /* This helps with centering */
 }
 
 .gallery-image {
@@ -264,6 +270,8 @@
 
     .gallery-item {
         margin-bottom: 20px;  /* Added bottom margin */
+        width: 85%; /* Adjusted for mobile */
+        max-width: 350px; /* Adjusted for mobile */
     }
 
     /* Welcome Section Adjustments */
@@ -305,6 +313,11 @@
 
     .services-list {
         gap: 15px;
+    }
+
+    .gallery-item {
+        width: 80%; /* Further adjusted for smaller screens */
+        max-width: 300px; /* Further adjusted for smaller screens */
     }
 }
 
@@ -364,7 +377,7 @@
 
 .services-list {
     list-style: none;
-    text-align: center; /* Changed to center */
+    text-align: center; /* Added missing semicolon */
     max-width: 600px;
     margin: 30px auto;
     padding: 0;
@@ -471,4 +484,35 @@
 
 .gallery-item:hover p {
     transform: translateY(0);
+}
+
+/* Mobile S - 320px */
+@media (min-width: 320px) {
+    .gallery-item {
+        width: 85%;          /* Adjust for smallest screens */
+        max-width: 280px;    /* Adjust based on testing */
+    }
+}
+
+/* Mobile M - 375px */
+@media (min-width: 375px) {
+    .gallery-item {
+        width: 85%;          /* Adjust for medium mobile */
+        max-width: 320px;    /* Adjust based on testing */
+    }
+}
+
+/* Mobile L - 425px */
+@media (min-width: 425px) {
+    .gallery-item {
+        width: 95%;          /* Adjust for larger mobile */
+        max-width: 400px;    /* Adjust based on testing */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .hero::after {
+        background-position: 50% -25px !important; /* Try an even more negative value */
+    }
 }
