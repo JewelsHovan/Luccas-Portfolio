@@ -176,14 +176,15 @@
 /* Welcome Section Styles */
 /* ==================== */
 #welcome {
-    padding: 60px 20px;
+    min-height: 100vh;
+    height: auto; /* Changed from fixed height */
+    padding: 40px 20px; /* Reduced padding */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/blue_room.jpg') 
                 no-repeat center center;
     background-size: cover;
     color: #fff;
     text-align: center;
-    height: 100vh;
     scroll-snap-align: start;
     display: flex;
     align-items: center;
@@ -193,7 +194,7 @@
 .welcome-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 30px; /* Reduced padding */
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -257,6 +258,39 @@
 .services-list li::before {
     content: '✈️';
     margin-right: 10px;
+}
+
+/* Add new media query for landscape orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    #welcome {
+        height: auto;
+        padding: 20px;
+    }
+
+    .welcome-container {
+        padding: 20px;
+    }
+
+    #welcome h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    #welcome p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .services-list {
+        margin: 15px auto;
+        gap: 8px;
+    }
+
+    .services-list li {
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
 }
 
 /* ==================== */
