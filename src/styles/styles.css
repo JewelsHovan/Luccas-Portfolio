@@ -21,7 +21,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color var(--transition-speed), color var(--transition-speed);
-    background-image: url('images/background-pattern.png');
+    background-image: url('../assets/images/background-pattern.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
