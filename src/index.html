@@ -6,15 +6,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon_io/site.webmanifest">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/index.css">
     <title>Luccas Booth | New Hampshire Artist & Professional Art Handler</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles/index.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" media="print" onload="this.media='all'">
+    <!-- Replace current Google Fonts link with this -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" media="print" onload="this.media='all'">    
+        
     <!-- Add these meta tags for SEO -->
     <meta name="description" content="Luccas Booth - Professional artist and art handler showcasing a unique portfolio of mixed media, oil paintings, and contemporary artwork. Based in New Hampshire.">
     <meta name="keywords" content="Luccas Booth, artist portfolio, art handler, contemporary art, oil paintings, mixed media, New Hampshire artist">
@@ -135,10 +137,10 @@
     
     <!-- AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="js/components.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase-client.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/gallery.js"></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/supabase-client.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/gallery.js" defer></script>
 </body>
 </html>
