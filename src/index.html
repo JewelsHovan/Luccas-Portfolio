@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Add this line for Chrome/Safari -->
+    <!-- Chrome/Safari theme color -->
     <meta name="theme-color" content="#ffffff">
     
     <!-- Favicon links -->
@@ -14,8 +14,8 @@
     <title>Luccas Booth | New Hampshire Artist & Professional Art Handler</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Add this preload link before your stylesheets -->
-    <link rel="preload" as="image" href="assets/images/hero-bg-mobile.webp" type="image/webp">
+    <!-- preload link -->
+    <link rel="preload" as="image" href="assets/images/hero-bg-mobile.webp" type="image/webp" media="(max-width: 768px)">
     
     <link rel="stylesheet" href="styles/styles.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="styles/index.css" media="print" onload="this.media='all'">
@@ -80,7 +80,7 @@
             <div class="gallery-container">
                 <div class="gallery-grid"> 
                     <div class="gallery-item featured" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_5821.jpg">
-                        <img class="gallery-image" loading="lazy"> 
+                        <img class="gallery-image" loading="lazy" width="300" height="300"> 
                         <div class="gallery-overlay">
                             <h3></h3>
                             <p></p>
@@ -89,7 +89,7 @@
                     </div>
                     
                     <div class="gallery-item" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/Lobster.jpg">
-                        <img class="gallery-image" loading="lazy">
+                        <img class="gallery-image" loading="lazy" width="300" height="300">
                         <div class="gallery-overlay">
                             <h3></h3>
                             <p></p>
@@ -98,7 +98,7 @@
                     </div>
                     
                     <div class="gallery-item" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG-8862.jpg">
-                        <img class="gallery-image" loading="lazy">
+                        <img class="gallery-image" loading="lazy" width="300" height="300">
                         <div class="gallery-overlay">
                             <h3></h3>
                             <p></p>
@@ -107,7 +107,7 @@
                     </div>
                     
                     <div class="gallery-item" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/Sofaygo.jpg">
-                        <img class="gallery-image" loading="lazy">
+                        <img class="gallery-image" loading="lazy" width="300" height="300">
                         <div class="gallery-overlay">
                             <h3></h3>
                             <p></p>
@@ -116,7 +116,7 @@
                     </div>
                     
                     <div class="gallery-item" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_8869.jpg">
-                        <img class="gallery-image" loading="lazy">
+                        <img class="gallery-image" loading="lazy" width="300" height="300">
                         <div class="gallery-overlay">
                             <h3></h3>
                             <p></p>
@@ -131,7 +131,7 @@
         <section id="welcome" data-aos="fade-up">
             <div class="welcome-container">
                 <div class="profile-thumbnail">
-                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQFoBRiP68qpPg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1666671696406?e=1735171200&v=beta&t=_eb38gtkRkagEdHjfbf03LiMg91UdZHflPYNwJuc6PQ" alt="Luccas Booth">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQFoBRiP68qpPg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1666671696406?e=1735171200&v=beta&t=_eb38gtkRkagEdHjfbf03LiMg91UdZHflPYNwJuc6PQ" alt="Luccas Booth" width="400" height="400">
                 </div>
                 <h2 data-aos="fade-up">Welcome to My Portfolio</h2>
                 <p data-aos="fade-up" data-aos-delay="100">
@@ -144,7 +144,7 @@
     <footer-component></footer-component>
     
     <!-- AOS JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/components.js" defer></script>
     <script src="js/supabase-client.js" defer></script>
