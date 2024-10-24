@@ -194,10 +194,12 @@
 .welcome-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 30px; /* Reduced padding */
+    padding: 30px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative; /* This is crucial for the overlap */
+    margin-top: 150px; /* Add space at top for the thumbnail */
 }
 
 #welcome h2 {
@@ -206,6 +208,7 @@
     margin-bottom: 30px;
     color: var(--primary-color);
     position: relative;
+    margin-top: 150px; /* Adjust based on thumbnail size */
 }
 
 #welcome h2::after {
@@ -230,36 +233,6 @@
     margin-right: auto;
 }
 
-.services-list {
-    list-style: none;
-    text-align: center;
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.services-list li {
-    margin-bottom: 0;
-    color: var(--text-color);
-    font-size: 1.1em;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.services-list li:hover {
-    transform: translateX(10px);
-}
-
-.services-list li::before {
-    content: '✈️';
-    margin-right: 10px;
-}
-
 /* Add new media query for landscape orientation */
 @media (max-height: 600px) and (orientation: landscape) {
     #welcome {
@@ -280,16 +253,6 @@
         font-size: 0.9em;
         margin-bottom: 15px;
         line-height: 1.4;
-    }
-
-    .services-list {
-        margin: 15px auto;
-        gap: 8px;
-    }
-
-    .services-list li {
-        padding: 5px 10px;
-        font-size: 0.9em;
     }
 }
 
@@ -378,16 +341,6 @@
         line-height: 1.6;
         padding: 0 10px;
     }
-
-    .services-list {
-        margin: 40px auto;
-        gap: 20px;
-    }
-
-    .services-list li {
-        font-size: 1em;
-        padding: 8px 15px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -417,9 +370,75 @@
         font-size: 0.95em;
         line-height: 1.5;
     }
+}
 
-    .services-list li {
-        font-size: 0.95em;
-        padding: 6px 12px;
+/* Profile Thumbnail Styles */
+.profile-thumbnail {
+    width: 300px;  /* Increased size based on your screenshot */
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+    top: -150px;   /* Half the height to create overlap */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid white;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.2),
+        0 0 0 8px rgba(65, 105, 225, 0.1),
+        0 0 20px 5px rgba(65, 105, 225, 0.2);
+    overflow: hidden;
+    z-index: 2; /* Ensure thumbnail appears above container */
+}
+
+.profile-thumbnail::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(
+        circle at center,
+        rgba(65, 105, 225, 0.2) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.profile-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects */
+.profile-thumbnail:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.25),
+        0 0 0 12px rgba(65, 105, 225, 0.15),
+        0 0 25px 8px rgba(65, 105, 225, 0.3);
+}
+
+.profile-thumbnail:hover img {
+    transform: scale(1.1);
+}
+
+/* Adjust welcome title spacing */
+#welcome h2 {
+    margin-top: 150px; /* Adjust based on thumbnail size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-thumbnail {
+        width: 180px;
+        height: 180px;
+        top: -90px;
+    }
+    
+    #welcome h2 {
+        margin-top: 70px;
     }
 }
