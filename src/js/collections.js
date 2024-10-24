@@ -173,3 +173,24 @@ function showArtworkModal(item) {
         }
     });
 }
+
+// Add this to your existing code
+function handleCategoryNavVisibility() {
+    const categoryNav = document.querySelector('.category-nav');
+    const footer = document.querySelector('footer');
+    
+    window.addEventListener('scroll', () => {
+        // Handle footer visibility on mobile only
+        if (footer && window.innerWidth <= 768) {
+            const footerRect = footer.getBoundingClientRect();
+            const isNearFooter = footerRect.top <= window.innerHeight;
+            categoryNav.classList.toggle('near-footer', isNearFooter);
+        }
+    });
+}
+
+// Add this to your initialization
+document.addEventListener('DOMContentLoaded', () => {
+    initializeCollections();
+    handleCategoryNavVisibility(); // Keep this for the footer visibility
+});

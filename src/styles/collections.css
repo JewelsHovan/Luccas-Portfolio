@@ -3,7 +3,7 @@
 
 /* Collections Hero Section */
 .collections-hero {
-    height: 60vh;
+    height: 40vh; /* Reduced from 60vh */
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     display: flex;
     align-items: center;
@@ -47,8 +47,10 @@
     background: rgba(255, 255, 255, 0.95);
     padding: 20px 0;
     position: sticky;
-    top: 0;
-    z-index: 100;
+    top: 70px; /* Adjust this value to match your header height */
+    left: 0;
+    right: 0;
+    z-index: 98; /* Keep this below header z-index */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -344,11 +346,30 @@
     .modal-image {
         height: 300px;
     }
+
+    .category-nav {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Reverse shadow for bottom position */
+    }
+
+    /* Add padding to prevent content from being hidden on mobile */
+    .category-section:last-of-type,
+    footer {
+        margin-bottom: 80px;
+    }
+
+    /* Optional: Hide nav when near footer on mobile */
+    .category-nav.near-footer {
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
 }
 
 @media (max-width: 480px) {
     .collections-hero {
-        height: 40vh;
+        height: 40vh; /* This was already at 40vh for mobile */
     }
 
     .artwork-grid {
@@ -392,4 +413,23 @@
     text-align: center;
     padding: 40px 20px;
     color: var(--text-color);
+}
+
+/* Add padding to the last section or footer to prevent content from being hidden behind the nav */
+.category-section:last-of-type,
+footer {
+    margin-bottom: 80px; /* Adjust based on your category-nav height */
+}
+
+/* Optional: Add a fade-out effect when near the footer */
+@media (max-width: 768px) {
+    .category-nav.near-footer {
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+}
+
+/* Float in class for desktop */
+.category-nav.float-in {
+    top: 0;
 }
