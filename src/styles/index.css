@@ -21,10 +21,16 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../assets/images/hero-bg.jpg') center 30% / contain;
+    background: url('../assets/images/hero-bg.webp') center 30% / contain;
     background-size: cover;
     opacity: 0.2;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .hero::after {
+        background: url('../assets/images/hero-bg-mobile.webp') center 30% / cover;
+    }
 }
 
 .hero h1 {
@@ -60,7 +66,7 @@
 /* ==================== */
 #gallery {
     padding: 60px 20px;
-    background: linear-gradient(to top, #ffffff, #ca6c65, #ffffff);
+    background: linear-gradient(to top, #282a38, #ffffff, #ca6c65);
 }
 
 .gallery-header {
