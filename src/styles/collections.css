@@ -217,3 +217,35 @@
     }
 }
 
+/* Loading Spinner */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--accent-color);
+    animation: spin 1s ease-in-out infinite;
+    margin: 40px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.error-message {
+    text-align: center;
+    color: #dc3545;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-color);
+}

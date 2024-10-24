@@ -28,6 +28,7 @@
                 <li><a href="#sculptures">Sculptures</a></li>
                 <li><a href="#photography">Photography</a></li>
                 <li><a href="#digital">Digital Art</a></li>
+                <li><a href="#artwork">Artwork</a></li>
             </ul>
         </nav>
 
@@ -137,13 +138,25 @@
                 <!-- Add more digital art items -->
             </div>
         </section>
+
+        <!-- Database Artwork Section -->
+        <section id="artwork" class="category-section">
+            <h2 data-aos="fade-up">My Artwork</h2>
+            <div class="artwork-grid" id="artwork-grid">
+                <!-- Loading State -->
+                <div class="loading-spinner"></div>
+            </div>
+        </section>
     </main>
 
     <footer-component></footer-component>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
     <script src="js/components.js"></script>
+    <script src="js/artwork.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
