@@ -15,30 +15,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initialize AOS
+    // Optimize AOS initialization
     if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800, // Animation duration in milliseconds
-            once: true,     // Whether animation should happen only once while scrolling down
-            offset: 200,    // Offset (in px) from the original trigger point
+        // Defer AOS initialization
+        requestIdleCallback(() => {
+            AOS.init({
+                duration: 800, // Animation duration in milliseconds
+                once: true,     // Whether animation should happen only once while scrolling down
+                offset: 200,    // Offset (in px) from the original trigger point
+            });
         });
     }
 
-    // Handle image loading for gallery items
+    // Optimize image loading with Intersection Observer
     function handleImageLoading() {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        galleryItems.forEach(item => {
-            const img = item.querySelector('img');
-            item.classList.add('loading');
-            
-            img.onload = () => {
-                item.classList.remove('loading');
-            };
-            
-            img.onerror = () => {
-                item.classList.remove('loading');
-                img.src = 'path/to/fallback-image.jpg'; // Add a fallback image
-            };
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const item = entry.target;
+                    const img = item.querySelector('img');
+                    const dataUrl = item.dataset.url;
+                    
+                    item.classList.add('loading');
+                    img.src = dataUrl;
+                    
+                    img.onload = () => item.classList.remove('loading');
+                    img.onerror = () => {
+                        item.classList.remove('loading');
+                        img.src = 'path/to/fallback-image.jpg';
+                    };
+                    
+                    observer.unobserve(item);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            imageObserver.observe(item);
         });
     }
 
@@ -106,20 +122,34 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Real-time validation
+        // Optimize form validation
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        const validateInput = debounce((input) => {
+            const formGroup = input.closest('.form-group');
+            const errorMessage = formGroup.querySelector('.error-message');
+            
+            if (input.required && !input.value.trim()) {
+                formGroup.classList.add('error');
+                errorMessage.textContent = 'This field is required';
+            } else {
+                formGroup.classList.remove('error');
+                errorMessage.textContent = '';
+            }
+        }, 150);
+
         form.querySelectorAll('input, textarea').forEach(input => {
-            input.addEventListener('input', function() {
-                const formGroup = this.closest('.form-group');
-                const errorMessage = formGroup.querySelector('.error-message');
-                
-                if (this.required && !this.value.trim()) {
-                    formGroup.classList.add('error');
-                    errorMessage.textContent = 'This field is required';
-                } else {
-                    formGroup.classList.remove('error');
-                    errorMessage.textContent = '';
-                }
-            });
+            input.addEventListener('input', () => validateInput(input));
         });
     }
 });
