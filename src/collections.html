@@ -24,126 +24,46 @@
         <!-- Category Navigation -->
         <nav class="category-nav">
             <ul class="category-list">
-                <li><a href="#paintings" class="active">Paintings</a></li>
-                <li><a href="#sculptures">Sculptures</a></li>
+                <li><a href="#drawing" class="active">Drawing</a></li>
+                <li><a href="#painting">Painting</a></li>
+                <li><a href="#collage">Collage</a></li>
                 <li><a href="#photography">Photography</a></li>
-                <li><a href="#digital">Digital Art</a></li>
-                <li><a href="#artwork">Artwork</a></li>
+                <li><a href="#prints">Prints</a></li>
             </ul>
         </nav>
 
-        <!-- Paintings Section -->
-        <section id="paintings" class="category-section">
-            <h2 data-aos="fade-up">Paintings</h2>
-            <div class="artwork-grid">
-                <!-- Artwork Item 1 -->
-                <article class="artwork-item" data-aos="fade-up">
-                    <div class="artwork-image">
-                        <img src="assets/images/paintings/painting1.jpg" alt="Abstract Painting">
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Abstract Harmony</h3>
-                        <p>Oil on canvas, exploring the interplay of color and emotion</p>
-                        <div class="artwork-metadata">
-                            <span>2023</span>
-                            <span>Oil on Canvas</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artwork Item 2 -->
-                <article class="artwork-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="artwork-image">
-                        <img src="assets/images/paintings/painting2.jpg" alt="Landscape Painting">
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Mountain Serenity</h3>
-                        <p>A serene landscape capturing the majesty of nature</p>
-                        <div class="artwork-metadata">
-                            <span>2023</span>
-                            <span>Acrylic on Canvas</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Add more painting items as needed -->
+        <!-- Category Sections -->
+        <section id="drawing" class="category-section">
+            <h2 data-aos="fade-up">Drawing</h2>
+            <div class="artwork-grid" id="drawing-grid">
+                <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <!-- Sculptures Section -->
-        <section id="sculptures" class="category-section">
-            <h2 data-aos="fade-up">Sculptures</h2>
-            <div class="artwork-grid">
-                <!-- Sculpture Item 1 -->
-                <article class="artwork-item" data-aos="fade-up">
-                    <div class="artwork-image">
-                        <img src="assets/images/sculptures/sculpture1.jpg" alt="Modern Sculpture">
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Geometric Flow</h3>
-                        <p>Bronze sculpture exploring mathematical forms</p>
-                        <div class="artwork-metadata">
-                            <span>2023</span>
-                            <span>Bronze</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Add more sculpture items -->
+        <section id="painting" class="category-section">
+            <h2 data-aos="fade-up">Painting</h2>
+            <div class="artwork-grid" id="painting-grid">
+                <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <!-- Photography Section -->
+        <section id="collage" class="category-section">
+            <h2 data-aos="fade-up">Collage</h2>
+            <div class="artwork-grid" id="collage-grid">
+                <div class="loading-spinner"></div>
+            </div>
+        </section>
+
         <section id="photography" class="category-section">
             <h2 data-aos="fade-up">Photography</h2>
-            <div class="artwork-grid">
-                <!-- Photography Item 1 -->
-                <article class="artwork-item" data-aos="fade-up">
-                    <div class="artwork-image">
-                        <img src="assets/images/photography/photo1.jpg" alt="Urban Photography">
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Urban Reflections</h3>
-                        <p>Street photography capturing city life</p>
-                        <div class="artwork-metadata">
-                            <span>2023</span>
-                            <span>Digital Photography</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Add more photography items -->
+            <div class="artwork-grid" id="photography-grid">
+                <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <!-- Digital Art Section -->
-        <section id="digital" class="category-section">
-            <h2 data-aos="fade-up">Digital Art</h2>
-            <div class="artwork-grid">
-                <!-- Digital Art Item 1 -->
-                <article class="artwork-item" data-aos="fade-up">
-                    <div class="artwork-image">
-                        <img src="assets/images/digital/digital1.jpg" alt="Digital Artwork">
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Digital Dreams</h3>
-                        <p>Digital illustration exploring surreal landscapes</p>
-                        <div class="artwork-metadata">
-                            <span>2023</span>
-                            <span>Digital Illustration</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Add more digital art items -->
-            </div>
-        </section>
-
-        <!-- Database Artwork Section -->
-        <section id="artwork" class="category-section">
-            <h2 data-aos="fade-up">My Artwork</h2>
-            <div class="artwork-grid" id="artwork-grid">
-                <!-- Loading State -->
+        <section id="prints" class="category-section">
+            <h2 data-aos="fade-up">Prints</h2>
+            <div class="artwork-grid" id="prints-grid">
                 <div class="loading-spinner"></div>
             </div>
         </section>
@@ -156,7 +76,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase-client.js"></script>
     <script src="js/components.js"></script>
-    <script src="js/artwork.js"></script>
+    <script src="js/collections.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
