@@ -45,7 +45,6 @@
       }
     }
     </script>
-    
     <!-- Add canonical URL to prevent duplicate content issues -->
     <link rel="canonical" href="https://luccasbooth.com" />
 </head>
@@ -69,75 +68,50 @@
             </div>
             
             <div class="gallery-container">
-                <div class="gallery-grid">
-                    <div class="gallery-item featured" data-aos="zoom-in">
-                        <a href="artwork1.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_8869.jpg" 
-                                 alt="Blue Figure in Darkness - Mixed media artwork featuring ethereal blue tones" 
-                                 class="gallery-image" 
-                                 loading="lazy">
-                            <div class="gallery-overlay">
-                                <h3>Blue Figure in Darkness</h3>
-                                <p>Mixed media on canvas, 2023</p>
-                                <span class="view-more">View Details →</span>
-                            </div>
-                        </a>
+                <div class="gallery-grid"> 
+                    <div class="gallery-item featured" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_5821.jpg">
+                        <img class="gallery-image" loading="lazy"> 
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                            <button class="view-more" aria-label="View details">View Details →</button>
+                        </div>
                     </div>
                     
-                    <div class="gallery-item" data-aos="zoom-in">
-                        <a href="artwork2.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/Abstract%20landscape.jpg" 
-                                 alt="Abstract Landscape" 
-                                 class="gallery-image" 
-                                 loading="lazy">
-                            <div class="gallery-overlay">
-                                <h3>Abstract Landscape</h3>
-                                <p>Oil on canvas, 2023</p>
-                                <span class="view-more">View Details →</span>
-                            </div>
-                        </a>
+                    <div class="gallery-item" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/Lobster.jpg">
+                        <img class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                            <button class="view-more">View Details →</button>
+                        </div>
                     </div>
                     
-                    <div class="gallery-item" data-aos="zoom-in">
-                        <a href="artwork3.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG-8862.jpg" 
-                                 alt="Geometric Abstraction" 
-                                 class="gallery-image" 
-                                 loading="lazy">
-                            <div class="gallery-overlay">
-                                <h3>Geometric Abstraction</h3>
-                                <p>Acrylic on canvas, 2023</p>
-                                <span class="view-more">View Details →</span>
-                            </div>
-                        </a>
+                    <div class="gallery-item" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG-8862.jpg">
+                        <img class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                            <button class="view-more">View Details →</button>
+                        </div>
                     </div>
                     
-                    <div class="gallery-item" data-aos="zoom-in">
-                        <a href="artwork4.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/afterimage.jpg" 
-                                 alt="Urban Composition" 
-                                 class="gallery-image" 
-                                 loading="lazy">
-                            <div class="gallery-overlay">
-                                <h3>Urban Composition</h3>
-                                <p>Mixed media, 2023</p>
-                                <span class="view-more">View Details →</span>
-                            </div>
-                        </a>
+                    <div class="gallery-item" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/Sofaygo.jpg">
+                        <img class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                            <button class="view-more">View Details →</button>
+                        </div>
                     </div>
                     
-                    <div class="gallery-item" data-aos="zoom-in">
-                        <a href="artwork5.html">
-                            <img src="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/owl%20on%20a%20boat.jpg" 
-                                 alt="Owl on a Boat" 
-                                 class="gallery-image" 
-                                 loading="lazy">
-                            <div class="gallery-overlay">
-                                <h3>Owl on a Boat</h3>
-                                <p>Oil on canvas, 2023</p>
-                                <span class="view-more">View Details →</span>
-                            </div>
-                        </a>
+                    <div class="gallery-item" data-url="https://rzarmwfxbhasplpnyikg.supabase.co/storage/v1/object/public/artwork/IMG_8869.jpg">
+                        <img class="gallery-image" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                            <button class="view-more">View Details →</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -162,6 +136,9 @@
     <!-- AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="js/components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/gallery.js"></script>
 </body>
 </html>
