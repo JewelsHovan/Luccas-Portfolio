@@ -110,7 +110,7 @@ class FooterComponent extends HTMLElement {
                     </div>
                     
                     <div class="footer-bottom">
-                        <p>&copy; 2023 Luccas Booth. All rights reserved.</p>
+                        <p>&copy; 2024 Luccas Booth. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
