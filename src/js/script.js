@@ -17,8 +17,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Optimize AOS initialization
     if (typeof AOS !== 'undefined') {
-        // Defer AOS initialization
-        requestIdleCallback(() => {
+        // Polyfill for requestIdleCallback
+        const rIC = window.requestIdleCallback || 
+            function(cb) {
+                // Use setTimeout as fallback with 1ms delay, following the polyfill pattern
+                return setTimeout(() => {
+                    cb({
+                        didTimeout: false,
+                        timeRemaining: () => 1
+                    });
+                }, 1);
+            };
+
+        // Use the polyfilled version
+        rIC(() => {
             AOS.init({
                 duration: 800, // Animation duration in milliseconds
                 once: true,     // Whether animation should happen only once while scrolling down
