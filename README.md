@@ -1,24 +1,28 @@
 # Luccas Booth Portfolio Website
 
 A professional portfolio website showcasing the artwork, designs, and professional services of Luccas Booth.
-Checkout the live site here: www.luccasbooth.com
+Visit the live site: [luccasbooth.com](https://luccasbooth.com)
+
 ## 🎨 Features
 
-- Responsive design for all devices
-- Image gallery with Swiper carousel
-- Smooth scroll animations with AOS
-- Contact form functionality
-- Professional artwork portfolio display
-- Mobile-friendly navigation
+- Responsive design optimized for all devices
+- Dynamic image gallery with lazy loading
+- Smooth scroll animations with AOS library
+- Contact form with FormSubmit integration
+- Professional artwork portfolio with Supabase backend
+- Mobile-friendly navigation with hamburger menu
 - Social media integration
+- SEO optimized with meta tags and structured data
+- Performance optimized with image preloading and async loading
 
 ## 🛠 Tech Stack
 
 - HTML5
-- CSS3
-- JavaScript (Vanilla)
+- CSS3 with CSS Variables
+- Vanilla JavaScript
 - [AOS](https://michalsnik.github.io/aos/) - Animate On Scroll Library
-- [Swiper](https://swiperjs.com/) - Modern Mobile Touch Slider
+- [Supabase](https://supabase.com/) - Backend as a Service
+- [FormSubmit](https://formsubmit.co/) - Form Backend Service
 - [Google Fonts](https://fonts.google.com/) - Playfair Display & Roboto
 
 ## 📁 Project Structure
@@ -28,24 +32,35 @@ portfolio-website/
 ├── src/
 │   ├── assets/
 │   │   ├── images/
-│   │   └── icons/
+│   │   ├── icons/
+│   │   └── favicon_io/
 │   ├── styles/
 │   │   ├── about.css
+│   │   ├── collections.css
 │   │   ├── contact.css
 │   │   ├── home.css
 │   │   └── styles.css
 │   ├── js/
 │   │   ├── components.js
+│   │   ├── collections.js
+│   │   ├── gallery.js
+│   │   ├── supabase-client.js
 │   │   └── script.js
 │   └── pages/
 │       ├── index.html
 │       ├── about.html
+│       ├── collections.html
 │       ├── contact.html
-│       ├── artwork.html
 │       └── thanks.html
 ```
 
 ## 🚀 Getting Started
+
+### Prerequisites
+
+- Web browser
+- Basic understanding of HTML, CSS, and JavaScript
+- Supabase account (for artwork database)
 
 ### Local Development
 
@@ -55,24 +70,24 @@ git clone https://github.com/yourusername/portfolio-website.git
 cd portfolio-website
 ```
 
-2. Open the project in your preferred code editor
+2. Set up environment variables:
+   - Create a `supabase-client.js` file with your Supabase credentials
+   - Configure FormSubmit endpoints in contact forms
 
-3. Serve the files locally using a development server of your choice:
+3. Serve the files locally using a development server:
    - Using Python: `python -m http.server`
    - Using Node.js: `npx serve src`
    - Using VS Code: Live Server extension
 
-4. Open your browser and navigate to `localhost:port` (port number will depend on your server)
+4. Open your browser and navigate to `localhost:port`
 
 ## 📦 Deployment
 
-This website is automatically deployed via Cloudflare Pages:
+The website is deployed via Cloudflare Pages:
 
-1. Every push to the `main` branch triggers a new deployment
-2. Cloudflare Pages automatically builds and serves the content
-3. The site is served through Cloudflare's global CDN network
-
-## 🔧 Configuration
+- Automatic deployments from the `main` branch
+- Global CDN distribution
+- SSL/TLS encryption
 
 ### Cloudflare Pages Settings
 
@@ -83,7 +98,7 @@ This website is automatically deployed via Cloudflare Pages:
 ## 🎨 Customization
 
 ### Colors
-The website uses CSS variables for easy customization. Main colors can be modified in `src/styles/styles.css`:
+Main colors can be modified in `src/styles/styles.css`:
 
 ```css
 :root {
@@ -124,9 +139,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 📞 Contact
 
-Luccas Booth - [Contact Form](luccasbooth.com/contact)
+Luccas Booth - [Contact Form](https://luccasbooth.com/contact)
 
 ## 🙏 Acknowledgments
 
 - [AOS Library](https://michalsnik.github.io/aos/)
+- [Supabase](https://supabase.com/)
+- [FormSubmit](https://formsubmit.co/)
 - [Google Fonts](https://fonts.google.com/)
