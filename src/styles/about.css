@@ -24,7 +24,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../assets/images/luccas-booth-about-bg.jpg') center 30% / cover;
+    background: url('../assets/images/luccas-booth-about-bg.webp') center 30% / cover;
     opacity: 0.2;
     z-index: 1;
 }

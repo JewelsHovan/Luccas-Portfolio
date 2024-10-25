@@ -21,7 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../assets/images/collections-bg.jpg') center center / cover;
+    background: url('../assets/images/collections-bg.webp') center center / cover;
     opacity: 0.2;
     z-index: 1;
 }
