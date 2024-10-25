@@ -1,7 +1,7 @@
 # Luccas Booth Portfolio Website
 
 A professional portfolio website showcasing the artwork, designs, and professional services of Luccas Booth.
-
+Checkout the live site here: www.luccasbooth.com
 ## 🎨 Features
 
 - Responsive design for all devices
@@ -124,12 +124,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 📞 Contact
 
-Luccas Booth - [Contact Form](https://your-portfolio-url/contact)
-
-Project Link: [https://github.com/yourusername/portfolio-website](https://github.com/yourusername/portfolio-website)
+Luccas Booth - [Contact Form](luccasbooth.com/contact)
 
 ## 🙏 Acknowledgments
 
 - [AOS Library](https://michalsnik.github.io/aos/)
-- [Swiper](https://swiperjs.com/)
 - [Google Fonts](https://fonts.google.com/)
