@@ -192,5 +192,26 @@ function handleCategoryNavVisibility() {
 // Add this to your initialization
 document.addEventListener('DOMContentLoaded', () => {
     initializeCollections();
-    handleCategoryNavVisibility(); // Keep this for the footer visibility
+    handleCategoryNavVisibility();
+    
+    // Category navigation functionality
+    const categoryLinks = document.querySelectorAll('.category-list a');
+    const categorySections = document.querySelectorAll('.category-section');
+
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Remove active class from all links and sections
+            categoryLinks.forEach(l => l.classList.remove('active'));
+            categorySections.forEach(s => s.classList.remove('active'));
+            
+            // Add active class to clicked link
+            link.classList.add('active');
+            
+            // Show corresponding section
+            const category = link.getAttribute('data-category');
+            document.getElementById(category).classList.add('active');
+        });
+    });
 });
