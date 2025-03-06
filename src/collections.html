@@ -24,45 +24,40 @@
         <!-- Category Navigation -->
         <nav class="category-nav">
             <ul class="category-list">
-                <li><a href="#drawing" class="active">Drawing</a></li>
-                <li><a href="#painting">Painting</a></li>
-                <li><a href="#collage">Collage</a></li>
-                <li><a href="#photography">Photography</a></li>
-                <li><a href="#prints">Prints</a></li>
+                <li><a href="#" data-category="drawing" class="active">Drawing</a></li>
+                <li><a href="#" data-category="painting">Painting</a></li>
+                <li><a href="#" data-category="collage">Collage</a></li>
+                <li><a href="#" data-category="photography">Photography</a></li>
+                <li><a href="#" data-category="prints">Prints</a></li>
             </ul>
         </nav>
 
         <!-- Category Sections -->
-        <section id="drawing" class="category-section">
-            <h2 data-aos="fade-up">Drawing</h2>
+        <section id="drawing" class="category-section active">
             <div class="artwork-grid" id="drawing-grid">
                 <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <section id="painting" class="category-section">
-            <h2 data-aos="fade-up">Painting</h2>
+        <section id="painting" class="category-section hidden">
             <div class="artwork-grid" id="painting-grid">
                 <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <section id="collage" class="category-section">
-            <h2 data-aos="fade-up">Collage</h2>
+        <section id="collage" class="category-section hidden">
             <div class="artwork-grid" id="collage-grid">
                 <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <section id="photography" class="category-section">
-            <h2 data-aos="fade-up">Photography</h2>
+        <section id="photography" class="category-section hidden">
             <div class="artwork-grid" id="photography-grid">
                 <div class="loading-spinner"></div>
             </div>
         </section>
 
-        <section id="prints" class="category-section">
-            <h2 data-aos="fade-up">Prints</h2>
+        <section id="prints" class="category-section hidden">
             <div class="artwork-grid" id="prints-grid">
                 <div class="loading-spinner"></div>
             </div>
@@ -78,5 +73,28 @@
     <script src="js/components.js"></script>
     <script src="js/collections.js"></script>
     <script src="js/script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoryLinks = document.querySelectorAll('.category-list a');
+        const categorySections = document.querySelectorAll('.category-section');
+
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links and sections
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                categorySections.forEach(s => s.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Show corresponding section
+                const category = link.getAttribute('data-category');
+                document.getElementById(category).classList.add('active');
+            });
+        });
+    });
+    </script>
 </body>
 </html>

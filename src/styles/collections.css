@@ -69,6 +69,7 @@
     padding: 8px 16px;
     border-radius: 20px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .category-list li a:hover,
@@ -282,7 +283,15 @@
 
 /* Category Sections */
 .category-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
     padding: 60px 0;
+}
+
+.category-section.active {
+    display: block;
+    opacity: 1;
 }
 
 .category-section h2 {
