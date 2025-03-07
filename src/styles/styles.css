@@ -9,6 +9,15 @@
     --transition-speed: 0.3s;
 }
 
+/* Font Face Declaration */
+@font-face {
+    font-family: 'Codystar';
+    src: url('https://fonts.gstatic.com/s/codystar/v19/FwZw7-Q1xVk-40qxOuYsyuyrj0s.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Global Reset and Base Styles */
 html {
     scroll-behavior: smooth;
@@ -24,7 +33,7 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     font-family: 'Forum', serif;
     margin: 0;
     padding: 0;
@@ -409,4 +418,23 @@ footer a img:hover {
         flex-direction: row; /* Keep horizontal layout on mobile */
         width: 100%;
     }
+}
+
+/* Header Title Styles */
+header-component h1 {
+    font-family: 'Codystar', cursive, sans-serif !important;
+    margin: 0;
+    font-weight: 400;
+}
+
+header-component h1 a {
+    color: #888888;
+    font-weight: bold;
+    font-family: 'Codystar', cursive, sans-serif !important;
+    letter-spacing: 0.1em;
+    transition: color var(--transition-speed);
+}
+
+header-component h1 a:hover {
+    color: var(--hover-color);
 }
