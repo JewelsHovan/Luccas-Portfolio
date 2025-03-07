@@ -4,7 +4,7 @@ class HeaderComponent extends HTMLElement {
         this.innerHTML = `
             <header>
                 <div class="header-content">
-                    <h1><a href="index.html">Luccas Booth</a></h1>
+                    <h1 style="font-family: 'Codystar', sans-serif;"><a href="index.html" style="color: #888888; font-weight: normal; letter-spacing: 0.1em">Luccas Booth</a></h1>
                     <nav>
                         <button id="menu-toggle" aria-label="Toggle navigation menu">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
